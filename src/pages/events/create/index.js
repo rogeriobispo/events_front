@@ -71,7 +71,6 @@ function CreateEvents() {
                 window.location.href = '/home';
             }, 2000);
         } catch (err) {
-            console.dir(err)
             window.flash(
                 `Erro: ${JSON.stringify(err.response.data.errors)}`,
                 'error'
