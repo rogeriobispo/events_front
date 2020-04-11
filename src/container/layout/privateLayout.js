@@ -1,18 +1,17 @@
-import React from 'react'
-import { Navbar } from "react-bootstrap"
-import { user } from '../../services/authentication/auth'
-import headerTitle from './headerTitle'
-import './privatelayout.css'
+import React from 'react';
+import { Navbar } from "react-bootstrap";
+import HeaderTitle from './headerTitle'
+import CreateEvent from './createEvent'
 
-
-export default function PrivateLayout(props) {
+export default function PublicLayout(prop) {
   return (
     <div className="App container">
-      <Navbar fluid collapseOnSelect className="barSup  borderRightLeft">
-        <headerTitle />
-      </Navbar>
+      <Navbar fluid collapseOnSelect>
+        <CreateEvent />
+        <HeaderTitle />
 
-      {props.children}
+      </Navbar>
+      {prop.children}
     </div>
   );
 }

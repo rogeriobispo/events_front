@@ -8,12 +8,10 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: url('./assets/us_heRobust.jpg');
-    background-repeat: no-repeat;
-    background-size: 1440px 750px;
+    
   }
-  
-  
+
+
   #root{
     max-width: 1020;
     margin: 0 auto;

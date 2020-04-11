@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Navbar } from "react-bootstrap";
 
 
@@ -6,7 +7,7 @@ function headerTitle() {
     return (
         <Navbar.Header>
             <Navbar.Brand>
-                <span>Events Controll</span>
+                <Link to='#'>Create Event</Link>
             </Navbar.Brand>
         </Navbar.Header>
     );
