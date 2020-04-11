@@ -1,12 +1,17 @@
 import React from 'react';
-import { Button } from 'antd'
-import './App.css';
+import Routes from './routes'
+import Bus from "./utils/bus";
+import { Flash } from "./container/message";
+
+window.flash = (message, type = "success") =>
+  Bus.emit("flash", { message, type });
 
 function App() {
   return (
-    <>
-      <Button type='primary'>Button</Button>
-    </>
+    <div className="App container">
+      <Flash />
+      <Routes />
+    </div>
   );
 }
 
