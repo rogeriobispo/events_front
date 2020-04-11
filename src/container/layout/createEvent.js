@@ -7,7 +7,7 @@ function headerTitle() {
     return (
         <Navbar.Header>
             <Navbar.Brand>
-                <Link to='#'>Create Event</Link>
+                <Link to='/events/create'>Create Event</Link>
             </Navbar.Brand>
         </Navbar.Header>
     );

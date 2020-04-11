@@ -31,6 +31,25 @@ function Home() {
     }
     return (
         <div className="App container">
+            <FormSearch filterEvents={filterEvents} />
+
+            <Grid>
+                <Row className="show-grid">
+                    <EventDetails events={events} />
+                </Row>
+            </Grid>
+
+        </div>
+    );
+}
+
+export default Home;
+
+// TODO when these components be necessary outside of here.
+// refactor them to its own files.
+function FormSearch(props) {
+    return (
+        <>
             <Form horizontal>
                 <FormGroup controlId="formHorizontalEmail">
                     <Col componentClass={ControlLabel} sm={2}>
@@ -40,33 +59,36 @@ function Home() {
                         <FormControl
                             type="text"
                             placeholder="Search Events"
-                            onChange={(e) => filterEvents(e.target.value)} />
+                            onChange={(e) => props.filterEvents(e.target.value)} />
                     </Col>
                 </FormGroup>
             </Form>
-            <Grid>
-                <Row className="show-grid">
-                    {events.map(evt => (
-                        <Col xs={6} md={4} key={evt.id} >
-                            <Jumbotron >
-                                <h1>{evt.kind}</h1>
-                                <h3>Artists</h3>
-                                <p>
-                                    {evt.artists.map(artist => (artist.name + "  "))}
-                                </p>
-                                <h3>Genres</h3>
-                                <p>
-                                    {evt.genres.map(genre => (genre.name + "  "))}
-                                </p>
-                            </Jumbotron>
-                        </Col>
-                    ))}
-
-                </Row>
-            </Grid>
-
-        </div>
+        </>
     );
 }
 
-export default Home;
+
+
+function EventDetails(props) {
+    return (
+        <>
+            {props.events.map(evt => (
+                <Col xs={6} md={4} key={evt.id} >
+                    <Jumbotron >
+                        <h1>{evt.kind}</h1>
+                        <h3>Artists</h3>
+                        <p>
+                            {evt.artists.map(artist => (artist.name + "  "))}
+                        </p>
+                        <h3>Genres</h3>
+                        <p>
+                            {evt.genres.map(genre => (genre.name + "  "))}
+                        </p>
+                    </Jumbotron>
+                </Col>
+            ))}
+
+        </>
+    );
+}
+

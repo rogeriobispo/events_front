@@ -12,7 +12,6 @@ api.interceptors.request.use(async config => {
     const token = getToken();
     if (token) {
         config.headers.Authorization = `Bearer ${token}`
-        config.headers['Content-Type'] = 'application/json'
     }
     return config
 })

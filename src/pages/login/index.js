@@ -22,7 +22,7 @@ export default function Login(props) {
             login(response.data.auth_token)
             props.history.push('/Home')
         } catch (e) {
-            window.flash(`Usuário ou senha Inválida`, 'error')
+            window.flash(`Invalid user or password`, 'error')
         }
     }
 

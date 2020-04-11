@@ -6,14 +6,15 @@ import PrivateRoute from './container/privateRoute'
 
 import Login from './pages/login'
 import Home from './pages/home'
+import EventCreate from './pages/events/create'
 
 
 const Routes = () => (
     <BrowserRouter>
         <Switch>
             <Route exact path="/" component={Login} />
-            <Route path="/user" component={() => <h1>SignUp</h1>} />
             <PrivateRoute path="/home" component={Home} />
+            <PrivateRoute path="/events/create" component={EventCreate} />
             <Route path="*" component={() => <h1>Page not found</h1>} />
         </Switch>
     </BrowserRouter>
